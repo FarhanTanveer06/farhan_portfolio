@@ -3,6 +3,7 @@ import './Portfolio.css'
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all')
+  const FALLBACK_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%23e0e0e0'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='Arial' font-size='24'>No%20Image</text></svg>"
 
   const projects = [
     {
@@ -82,7 +83,7 @@ const Portfolio = () => {
         {filteredProjects.map(project => (
           <div key={project.id} className="portfolio-item">
             <div className="portfolio-image">
-              <img src={project.image} alt={project.title} />
+              <img src={project.image} alt={project.title} onError={(e) => { e.currentTarget.src = FALLBACK_IMG }} />
               <div className="portfolio-overlay">
                 <h3 className="portfolio-title">{project.title}</h3>
                 <button className="portfolio-btn">View Details</button>
