@@ -17,32 +17,25 @@ const Hero = ({ setActiveSection }) => {
           <h1 className="hero-name">Farhan Tanveer Shihab Sarkar</h1>
           <h2 className="hero-title">Aspiring Data Scientist</h2>
           <div className="hero-buttons">
-            {(() => {
-              const resumeUrl = new URL('resume.pdf', import.meta.env.BASE_URL).href
-              return (
-                <>
-                  <button 
-                    className="btn btn-primary"
-                    onClick={() => scrollToSection('contact')}
-                  >
-                    Get In Touch
-                  </button>
-                  <a 
-                    href={resumeUrl}
-                    className="btn btn-secondary"
-                    download
-                  >
-                    Print Resume
-                  </a>
-                </>
-              )
-            })()}
+            <button 
+              className="btn btn-primary"
+              onClick={() => scrollToSection('contact')}
+            >
+              Get In Touch
+            </button>
+            <a 
+              href={`${import.meta.env.BASE_URL}resume.pdf`}
+              className="btn btn-secondary"
+              download
+            >
+              Print Resume
+            </a>
           </div>
         </div>
         <div className="hero-content-right">
           <div className="hero-avatar">
             <img
-              src={new URL('profile.jpg', import.meta.env.BASE_URL).href}
+              src={`${import.meta.env.BASE_URL}profile.jpg`}
               alt="Profile"
             />
           </div>

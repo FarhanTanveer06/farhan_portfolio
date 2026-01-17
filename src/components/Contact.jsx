@@ -118,7 +118,7 @@ const Contact = () => {
         <div className="contact-info">
           <div className="contact-avatar">
             <img
-              src={new URL('profile.jpg', import.meta.env.BASE_URL).href}
+              src={`${import.meta.env.BASE_URL}profile.jpg`}
               alt="Profile"
             />
           </div>
