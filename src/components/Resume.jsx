@@ -2,20 +2,27 @@ import React from 'react'
 import './Resume.css'
 
 const Resume = () => {
-  const experiences = []
+  const experiences = [
+    {
+      period: '2025 (January) - Present',
+      title: 'Software Engineer II',
+      company: 'Your Company',
+      description: 'Collaborating with cross-functional teams to develop and implement software solutions, ensuring adherence to coding standards and best practices.'
+    },
+    {
+      period: '2023 (July) - 2024 (December)',
+      title: 'Software Engineer I',
+      company: 'Your Company',
+      description: 'Designing and executing comprehensive test plans, identifying and resolving software defects to deliver high-quality and reliable products.'
+    }
+  ]
 
   const education = [
     {
-      period: '2017 - 2019',
-      degree: 'A Level',
-      school: 'Green Scholars School and College',
-      description: 'Completed Advanced Level studies at Green Scholars School and College.'
-    },
-    {
-      period: '2017',
-      degree: 'O Level',
-      school: 'Green Scholars School and College',
-      description: 'Completed Ordinary Level studies at Green Scholars School and College.'
+      period: '2018 - 2022',
+      degree: 'BSc in Computer Science & Engineering',
+      school: 'Your University',
+      description: 'Graduated with a CGPA of 3.87 out of 4.00, showcasing outstanding academic achievement and unwavering commitment to excellence.'
     }
   ]
 
@@ -38,22 +45,16 @@ const Resume = () => {
         <div className="resume-column">
           <h3 className="resume-subtitle">Experiences</h3>
           <div className="timeline">
-            {experiences.length > 0 ? (
-              experiences.map((exp, index) => (
-                <div key={index} className="timeline-item">
-                  <div className="timeline-period">{exp.period}</div>
-                  <div className="timeline-content">
-                    <h4 className="timeline-title">{exp.title}</h4>
-                    <p className="timeline-company">{exp.company}</p>
-                    <p className="timeline-description">{exp.description}</p>
-                  </div>
+            {experiences.map((exp, index) => (
+              <div key={index} className="timeline-item">
+                <div className="timeline-period">{exp.period}</div>
+                <div className="timeline-content">
+                  <h4 className="timeline-title">{exp.title}</h4>
+                  <p className="timeline-company">{exp.company}</p>
+                  <p className="timeline-description">{exp.description}</p>
                 </div>
-              ))
-            ) : (
-              <div className="no-experience">
-                <p>No professional experience yet. Currently seeking opportunities to apply my skills and grow in the field of Data Science and Machine Learning.</p>
               </div>
-            )}
+            ))}
           </div>
         </div>
 

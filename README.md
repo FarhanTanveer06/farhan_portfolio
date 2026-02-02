@@ -26,10 +26,12 @@ A modern, responsive portfolio website built with React, styled to match a profe
 npm install
 ```
 
-2. Set up Web3Forms:
-   - Go to [Web3Forms](https://web3forms.com/)
-   - Sign up and get your access key
-   - Replace `YOUR_WEB3FORMS_ACCESS_KEY` in `src/components/Contact.jsx` with your actual access key
+2. Set up Environment Variables:
+   - Create a `.env` file in the root directory
+   - Add your Web3Forms Access Key:
+     ```
+     VITE_WEB3FORMS_ACCESS_KEY=your_access_key_here
+     ```
 
 3. Customize your information:
    - Update personal details in `src/components/About.jsx`
@@ -46,6 +48,11 @@ npm run dev
 5. Build for production:
 ```bash
 npm run build
+```
+
+6. Deploy to GitHub Pages:
+```bash
+npm run deploy
 ```
 
 ## Project Structure
@@ -68,14 +75,14 @@ src/
 ```
 
 ## Web3Forms Setup
-
-1. Visit [https://web3forms.com/](https://web3forms.com/)
-2. Sign up for a free account
-3. Get your access key
-4. Replace the placeholder in `Contact.jsx`:
-   ```javascript
-   const WEB3FORMS_ACCESS_KEY = 'your-actual-access-key-here'
-   ```
+ 
+ 1. Visit [https://web3forms.com/](https://web3forms.com/)
+ 2. Sign up for a free account
+ 3. Get your access key
+ 4. Add the key to your `.env` file:
+    ```
+    VITE_WEB3FORMS_ACCESS_KEY=your-actual-access-key-here
+    ```
 
 ## Customization
 

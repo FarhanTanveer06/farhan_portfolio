@@ -77,21 +77,6 @@
   line-height: 1.6;
 }
 
-.no-experience {
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  border: 2px dashed #ddd;
-  text-align: center;
-}
-
-.no-experience p {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.8;
-  margin: 0;
-}
-
 .skills-section,
 .languages-section {
   margin-top: 4rem;

@@ -1,9 +1,5 @@
 .about-section {
   background-color: #f8f9fa;
-  max-width: 100% !important;
-  margin: 0 !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
 }
 
 .about-container {
@@ -11,9 +7,6 @@
   grid-template-columns: 2fr 1fr;
   gap: 4rem;
   align-items: start;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 4rem;
 }
 
 .about-content {
@@ -99,18 +92,11 @@
   .about-container {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 0 2rem;
   }
   
   .about-content,
   .personal-info {
     padding: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-container {
-    padding: 0 1rem;
   }
 }
 
