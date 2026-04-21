@@ -14,7 +14,7 @@ const Hero = ({ setActiveSection }) => {
       <div className="hero-inner">
         <div className="hero-content-left">
           <p className="hero-greeting">Hello, I am</p>
-          <h1 className="hero-name">Farhan Tanveer Shihab Sarkar</h1>
+          <h1 className="hero-name">Farhan Tanveer</h1>
           <h2 className="hero-title">Aspiring Data Scientist</h2>
           <div className="hero-buttons">
             <button 
