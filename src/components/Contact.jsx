@@ -136,7 +136,7 @@ const Contact = () => {
 
           <div className="contact-info-item">
             <strong>Email:</strong>
-            <span>tanveer.shihab.sarkar@g.bracu.ac.bd</span>
+            <span>farhansarkar10130@gmail.com</span>
           </div>
         </div>
       </div>

@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Navigation from './components/Navigation'
 import Hero from './components/Hero'
 import About from './components/About'
-import Expertise from './components/Expertise'
 import Resume from './components/Resume'
 import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
@@ -17,7 +16,6 @@ function App() {
       <Navigation activeSection={activeSection} setActiveSection={setActiveSection} />
       <Hero setActiveSection={setActiveSection} />
       <About setActiveSection={setActiveSection} />
-      <Expertise setActiveSection={setActiveSection} />
       <Resume setActiveSection={setActiveSection} />
       <Portfolio setActiveSection={setActiveSection} />
       <Contact setActiveSection={setActiveSection} />

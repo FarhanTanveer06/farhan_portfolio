@@ -1,92 +1,101 @@
-import React, { useState } from 'react'
+import React from 'react'
 import './Portfolio.css'
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState('all')
   const FALLBACK_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='400' height='300'><rect width='100%' height='100%' fill='%23e0e0e0'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23666' font-family='Arial' font-size='24'>No%20Image</text></svg>"
 
   const projects = [
     {
       id: 1,
-      title: 'Project 1',
-      category: 'web',
-      image: 'https://via.placeholder.com/400x300?text=Project+1'
+      title: 'Thesis Project: Dental Condition Identification',
+      domain: 'Computer Vision | Deep Learning',
+      images: [
+        `${import.meta.env.BASE_URL}projects/p_dataset.png`
+      ],
+      description:
+        'Built a deep learning pipeline to classify dental conditions from radiography images, supporting faster and more consistent diagnosis.',
+      highlights: [
+        'Prepared radiography data for training and evaluation workflows.',
+        'Trained and validated deep learning models for multi-condition classification.',
+        'Compared performance across model versions to improve accuracy and reliability.'
+      ],
+      githubUrl: '#'
     },
     {
       id: 2,
-      title: 'Project 2',
-      category: 'app',
-      image: 'https://via.placeholder.com/400x300?text=Project+2'
+      title: 'Fashion Store Platform',
+      domain: 'Full Stack Web Development',
+      image: `${import.meta.env.BASE_URL}projects/fashion_store.jpg`,
+      description:
+        'Developed an e-commerce fashion platform with authentication, admin controls, and an AI assistant for occasion-based clothing suggestions.',
+      highlights: [
+        'Implemented login, registration, and secure user signup module.',
+        'Created admin controls for managing store and user workflows.',
+        'Integrated AI chatbot assistant to recommend outfits by occasion.'
+      ],
+      githubUrl: 'https://github.com/FarhanTanveer06/CSE471_project'
     },
     {
       id: 3,
-      title: 'Project 3',
-      category: 'graphics',
-      image: 'https://via.placeholder.com/400x300?text=Project+3'
-    },
-    {
-      id: 4,
-      title: 'Project 4',
-      category: 'web',
-      image: 'https://via.placeholder.com/400x300?text=Project+4'
-    },
-    {
-      id: 5,
-      title: 'Project 5',
-      category: 'app',
-      image: 'https://via.placeholder.com/400x300?text=Project+5'
-    },
-    {
-      id: 6,
-      title: 'Project 6',
-      category: 'graphics',
-      image: 'https://via.placeholder.com/400x300?text=Project+6'
+      title: 'Mice Classification Using ML',
+      domain: 'Machine Learning | Bioinformatics',
+      image: `${import.meta.env.BASE_URL}projects/machineLearning_web.png`,
+      description:
+        'Used genome and protein expression data to classify different mice types and benchmarked multiple machine learning models.',
+      highlights: [
+        'Applied preprocessing and feature handling for biological dataset quality.',
+        'Trained Logistic Regression, KNN, and Naive Bayes classifiers.',
+        'Compared model accuracy and selected best-performing approach.'
+      ],
+      githubUrl: 'https://github.com/FarhanTanveer06/Machine_learning_project'
     }
   ]
-
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === filter)
 
   return (
     <section id="portfolio" className="portfolio-section">
       <h2 className="section-title">My Portfolio</h2>
-
-      <div className="portfolio-filters">
-        <button 
-          className={filter === 'all' ? 'filter-btn active' : 'filter-btn'}
-          onClick={() => setFilter('all')}
-        >
-          All
-        </button>
-        <button 
-          className={filter === 'web' ? 'filter-btn active' : 'filter-btn'}
-          onClick={() => setFilter('web')}
-        >
-          Web
-        </button>
-        <button 
-          className={filter === 'app' ? 'filter-btn active' : 'filter-btn'}
-          onClick={() => setFilter('app')}
-        >
-          App
-        </button>
-        <button 
-          className={filter === 'graphics' ? 'filter-btn active' : 'filter-btn'}
-          onClick={() => setFilter('graphics')}
-        >
-          Graphics
-        </button>
-      </div>
+  
 
       <div className="portfolio-grid">
-        {filteredProjects.map(project => (
+        {projects.map(project => (
           <div key={project.id} className="portfolio-item">
             <div className="portfolio-image">
-              <img src={project.image} alt={project.title} onError={(e) => { e.currentTarget.src = FALLBACK_IMG }} />
-              <div className="portfolio-overlay">
-                <h3 className="portfolio-title">{project.title}</h3>
-                <button className="portfolio-btn">View Details</button>
+              <img
+                src={project.images ? project.images[0] : project.image}
+                alt={project.title}
+                onError={(e) => { e.currentTarget.src = FALLBACK_IMG }}
+              />
+            </div>
+            {project.images && project.images.length > 1 && (
+              <div className="portfolio-thumbnails">
+                {project.images.map((img, index) => (
+                  <img
+                    key={index}
+                    src={img}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    onError={(e) => { e.currentTarget.src = FALLBACK_IMG }}
+                  />
+                ))}
+              </div>
+            )}
+            <div className="portfolio-content">
+              <p className="portfolio-domain">{project.domain}</p>
+              <h3 className="portfolio-title">{project.title}</h3>
+              <p className="portfolio-description">{project.description}</p>
+              <ul className="portfolio-highlights">
+                {project.highlights.map((item, index) => (
+                  <li key={index}>{item}</li>
+                ))}
+              </ul>
+              <div className="portfolio-actions">
+                <a
+                  href={project.githubUrl}
+                  className="portfolio-btn"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  GitHub Repository
+                </a>
               </div>
             </div>
           </div>

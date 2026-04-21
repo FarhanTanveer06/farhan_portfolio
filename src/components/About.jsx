@@ -22,10 +22,10 @@ const About = () => {
               <strong>Birth Date:</strong> <span>06/01/2000</span>
             </li>
             <li>
-              <strong>Email:</strong> <span>tanveer.shihab.sarkar@g.bracu.ac.bd</span>
+              <strong>Email:</strong> <span>farhansarkar10130@gmail.com</span>
             </li>
             <li>
-              <strong>Phone:</strong> <span>01882975833</span>
+              <strong>Phone:</strong> <span>01636656861</span>
             </li>
             <li>
               <strong>Address:</strong> <span>Suavstu Chirontoni, 26 Indira Road , Farmgate</span>

@@ -9,7 +9,7 @@ const Navigation = ({ activeSection, setActiveSection }) => {
       setIsScrolled(window.scrollY > 50)
       
       // Update active section based on scroll position
-      const sections = ['home', 'about', 'expertise', 'resume', 'portfolio', 'contact']
+      const sections = ['home', 'about', 'resume', 'portfolio', 'contact']
       const scrollPosition = window.scrollY + 100
       
       for (let i = sections.length - 1; i >= 0; i--) {
