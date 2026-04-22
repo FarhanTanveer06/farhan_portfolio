@@ -15,7 +15,7 @@ const Hero = ({ setActiveSection }) => {
         <div className="hero-content-left">
           <p className="hero-greeting">Hello, I am</p>
           <h1 className="hero-name">Farhan Tanveer</h1>
-          <h2 className="hero-title">Aspiring Data Scientist</h2>
+          <h2 className="hero-title">Aspiring Software Engineer</h2>
           <div className="hero-buttons">
             <button 
               className="btn btn-primary"
@@ -23,13 +23,6 @@ const Hero = ({ setActiveSection }) => {
             >
               Get In Touch
             </button>
-            <a 
-              href={`${import.meta.env.BASE_URL}resume.pdf`}
-              className="btn btn-secondary"
-              download
-            >
-              Print Resume
-            </a>
           </div>
         </div>
         <div className="hero-content-right">
@@ -46,4 +39,3 @@ const Hero = ({ setActiveSection }) => {
 }
 
 export default Hero
-

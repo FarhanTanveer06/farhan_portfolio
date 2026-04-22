@@ -8,11 +8,17 @@ const About = () => {
       
       <div className="about-container">
         <div className="about-content">
-          <h3 className="about-subtitle">An aspiring Data Scientist</h3>
+          <h3 className="about-subtitle">An aspiring Software Engineer</h3>
           <p className="about-description">
-          An ambitious aspiring data scientist and ML engineer with a foundation in Computer Science, combining technical skills in deep learning and software development with strong problem-solving abilities. Currently building hands-on experience through projects in machine learning, data analysis, and intelligent system design, I'm driven to transform complex data into meaningful insights. My adaptability and passion for continuous learning keep me evolving in the dynamic world of AI, ready to contribute to innovative projects that push technological boundaries.
+          I'm actively looking for roles in software development, software testing, and data analytics. Each of these areas excites me for different reasons — I love the process of building things, I care about quality and making sure things actually work the way they should, and I find it really satisfying to work with data and turn it into something useful. I'm at a point in my career where I'm hungry to learn, contribute, and grow with the right team.
           </p>
-          <button className="btn-download">Download My CV</button>
+          <a 
+            href={`${import.meta.env.BASE_URL}resume.pdf`}
+            className="btn-download"
+            download="Farhan_Tanveer_CV.pdf"
+          >
+            Download My CV
+          </a>
         </div>
 
         <div className="personal-info">
@@ -38,4 +44,3 @@ const About = () => {
 }
 
 export default About
-
